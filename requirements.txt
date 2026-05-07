@@ -1,0 +1,23 @@
+# Core dependencies for India Voice Agent
+# 100% Open Source - No API keys required
+
+# LLM Integration
+ollama>=0.1.0
+
+# Configuration
+PyYAML>=6.0
+
+# Speech Recognition (supports Hindi & English)
+SpeechRecognition>=3.10.0
+
+# Text-to-Speech
+pyttsx3>=2.90
+
+# Optional: For better audio processing
+pyaudio>=0.2.13; platform_system != "Windows"
+
+# Optional: For advanced TTS (better Hindi support)
+# coqui-tts>=0.20.0
+
+# Utilities
+requests>=2.31.0
