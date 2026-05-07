@@ -1,0 +1,13 @@
+# Core dependencies
+ollama>=0.1.0
+openai-whisper>=20231117
+speechrecognition>=3.10.0
+pyaudio>=0.2.14
+
+# TTS options (choose one)
+pyttsx3>=2.90  # Basic offline TTS
+# TTS>=0.21.0  # Coqui TTS for better quality (optional)
+
+# Utilities
+numpy>=1.24.0
+torch>=2.0.0

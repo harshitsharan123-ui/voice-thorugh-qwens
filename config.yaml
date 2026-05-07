@@ -1,0 +1,65 @@
+# Configuration for Conversational AI Voice Agent - Optimized for India (Hindi + English)
+# 100% Open Source - No API Keys Required
+
+# Local Qwen Model Settings (100% Open Source)
+local_qwen:
+  model: "qwen2.5:7b"  # Options: qwen2.5:3b, qwen2.5:7b, qwen2.5:14b, qwen2.5:32b
+  temperature: 0.7  # Higher = more creative, Lower = more focused
+  max_tokens: 512
+  top_p: 0.9
+  
+# Voice Settings
+voice:
+  tts_engine: "pyttsx3"  # Options: pyttsx3, coqui (for better Hindi)
+  speech_rate: 160  # Words per minute (slightly faster for natural Indian accent)
+  voice_id: null  # Specific voice ID (leave null for default)
+  pitch: 50  # Pitch adjustment (0-100)
+  
+# Speech Recognition Settings
+speech_recognition:
+  engine: "whisper"  # Options: speechrecognition, whisper (whisper is better for Hindi)
+  language: "hi"  # Default to Hindi, auto-detects English too
+  pause_threshold: 0.8  # Seconds of silence before considering speech complete
+  phrase_time_limit: 20  # Max seconds for a phrase (longer for Hindi sentences)
+  energy_threshold: 300  # Audio energy threshold for listening
+
+# Conversation Settings - Optimized for Indian Context
+conversation:
+  system_prompt: |
+    You are a friendly, helpful AI assistant designed for Indian customers. 
+    You communicate naturally in both Hindi and English (Hinglish), switching 
+    between languages based on what the user speaks. 
+    
+    Guidelines:
+    - Respond in the same language the user uses (Hindi, English, or Hinglish mix)
+    - Be warm, respectful, and culturally aware of Indian context
+    - Use polite forms like "जी" (ji) when appropriate in Hindi
+    - Speak conversationally like a human - use contractions, natural pauses
+    - Keep responses concise, clear, and engaging
+    - If asked about India-specific topics (festivals, food, culture, services), 
+      provide relevant and accurate information
+    - For technical terms, you can use English words even in Hindi sentences
+    
+    Examples:
+    - If user says "Hello, how are you?" → Respond in English
+    - If user says "नमस्ते, कैसे हो?" → Respond in Hindi
+    - If user says "Hi, mera naam Rahul hai" → Respond in Hinglish (mix)
+    
+    Always be patient, helpful, and maintain a friendly tone suitable for 
+    customer service in India.
+  max_history: 12  # Number of previous messages to keep in context (more for better conversations)
+  personality: "friendly_helper_indian"  # Warm, respectful, culturally aware
+
+# Audio Settings
+audio:
+  sample_rate: 16000
+  channels: 1
+  chunk_size: 1024
+  format: "wav"
+
+# Advanced Settings
+advanced:
+  enable_streaming: true  # Stream audio as it's generated
+  enable_logging: true
+  log_level: "INFO"
+  response_delay: 0.2  # Slightly longer delay for natural pacing
